@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: config-repo-global
+
+logging:
+  level:
+    root: INFO

@@ -6,7 +6,7 @@ spring:
     name: customer-service
 
   r2dbc:
-    url: r2dbc:postgresql://postgres:5432/customer_services
+    url: r2dbc:postgresql://postgres:5432/customer_service
     username: tcam
     password: tcam123
 
@@ -15,12 +15,28 @@ spring:
     url: jdbc:postgresql://postgres:5432/customer_service
     user: tcam
     password: tcam123
-    change-log: classpath:/db/changelog/master.xml
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
 
 logging:
   level:
     root: INFO
     org.springframework.r2dbc: DEBUG
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:9000/eureka
+
+#jwt:
+#  secret: dev-secret-key-change-me
+#  encryptionKey: dev-encryption-key-change-me
+
+jwt:
+  secret: dev-secret-key-change-me
+  encryptionKey: dev-encryption-key-change-me
+  keys:
+    client2BackPublicKey: dummy-public-key-value
+    back2BackKey: dummy-back-to-back-key-value
 
 management:
   endpoints:

@@ -3,16 +3,16 @@ server:
 
 spring:
   application:
-    name: customer-service
+    name: identity-management-service
 
   r2dbc:
-    url: r2dbc:postgresql://postgres:5432/customer_service
+    url: r2dbc:postgresql://postgres:5432/identity_management_service
     username: postgres
     password: postgres
 
   liquibase:
     enabled: true
-    url: jdbc:postgresql://postgres:5432/customer_service
+    url: jdbc:postgresql://postgres:5432/identity_management_service
     user: postgres
     password: postgres
     change-log: classpath:/db/changelog/db.changelog-master.yaml

@@ -3,6 +3,7 @@ application:
 server:
   # port: ${GATEWAY_SERVER_PORT:5556}
   port: 9999
+  name: gateway-server
   servlet:
     encoding:
       charset: UTF-8
@@ -18,7 +19,7 @@ spring:
             locator:
               enabled: true
               lower-case-service-id: true
-          globalcors:
+          globalCors:
             corsConfigurations:
               '[/**]':
                 allowedOrigins:
